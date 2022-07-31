@@ -1,6 +1,6 @@
 export default {
-  name: 'banner',
-  title: 'Banner',
+  name: 'herobanner',
+  title: 'Hero Banner',
   type: 'document',
   fields: [
     {
@@ -39,11 +39,6 @@ export default {
     {
       name: 'largeText1',
       title: 'LargeText1',
-      type: 'string',
-    },
-    {
-      name: 'largeText2',
-      title: 'LargeText2',
       type: 'string',
     },
     {

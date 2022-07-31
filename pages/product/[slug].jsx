@@ -14,6 +14,15 @@ const ProductPage = ({ product, products }) => {
 
   const [index, setIndex] = useState(0);
 
+  const [quantity, setQuantity] = useState(1);
+
+  const decrement = () => {
+    quantity >= 1 ? setQuantity(quantity - 1) : quantity;
+  };
+  const increment = () => {
+    setQuantity(quantity + 1);
+  };
+
   return (
     <div>
       <div className='product-page__container'>
@@ -53,12 +62,14 @@ const ProductPage = ({ product, products }) => {
           <p className='product-page__price'>${price}</p>
           <div className='product-page__quantity'>
             <h3>Quantity</h3>
-            <div class='num-block quantity-input'>
-              <div class='num-in'>
-                <span class='minus dis'></span>
-                <input type='text' class='in-num' value='1' readonly='' />
-                <span class='plus'></span>
-              </div>
+            <div class='quantity-input'>
+              <button type='button' class='minus' onClick={decrement}>
+                -
+              </button>
+              <h3 className='quantity-num'>{quantity}</h3>
+              <button type='button' class='plus' onClick={increment}>
+                +
+              </button>
             </div>
           </div>
           <div className='product-page__buttons'>

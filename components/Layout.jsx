@@ -8,6 +8,11 @@ const Layout = ({ children }) => {
     <div>
       <Head>
         <title>Sanctier</title>
+        <meta
+          name='keywords'
+          content='sanctier, streetwear, street, wear, clothing, modeling'
+        />
+        <meta name='' content='' />
       </Head>
       <header>
         <Navbar />
