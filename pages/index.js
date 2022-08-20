@@ -16,11 +16,11 @@ const Home = ({ products, HeroBannerData, heroData, footerBannerData }) => {
         <h2>Best Selling Products</h2>
         <p>Check out what people like you are buying</p>
       </div>
-
+      {console.log(products)}
       <div className='products__container'>
-        {products?.splice(0, 7).map((product) => (
-          <Product key={product._id} product={product} />
-        ))}
+        {products.slice(0, 5).map((item) => {
+          return <Product key={item._id} product={item} />;
+        })}
       </div>
 
       <FooterBanner

@@ -1,27 +1,14 @@
 import React, { useState } from 'react';
 import Product from '../../components/Product';
-import {
-  AiOutlineMinus,
-  AiOutlinePlus,
-  AiFillStar,
-  AiOutlineStar,
-} from 'react-icons/ai';
 
 import { client, urlFor } from '../../lib/client';
+import { useStateContext } from '../../context/StateContext';
 
 const ProductPage = ({ product, products }) => {
   const { name, images, details, price, size, colour } = product;
 
   const [index, setIndex] = useState(0);
-
-  const [quantity, setQuantity] = useState(1);
-
-  const decrement = () => {
-    quantity >= 1 ? setQuantity(quantity - 1) : quantity;
-  };
-  const increment = () => {
-    setQuantity(quantity + 1);
-  };
+  const { incQty, decQty, qty, onAdd } = useStateContext();
 
   return (
     <div>
@@ -47,33 +34,27 @@ const ProductPage = ({ product, products }) => {
         </div>
         <div className='product-page__desc'>
           <h1>{name}</h1>
-          <div className='reviews'>
-            <div>
-              <AiFillStar />
-              <AiFillStar />
-              <AiFillStar />
-              <AiFillStar />
-              <AiOutlineStar />
-            </div>
-            <p>(20)</p>
-          </div>
           <h4>Details: </h4>
           <p>{details}</p>
           <p className='product-page__price'>${price}</p>
           <div className='product-page__quantity'>
             <h3>Quantity</h3>
-            <div class='quantity-input'>
-              <button type='button' class='minus' onClick={decrement}>
+            <div class='quantity__input'>
+              <button type='button' class='minus' onClick={decQty}>
                 -
               </button>
-              <h3 className='quantity-num'>{quantity}</h3>
-              <button type='button' class='plus' onClick={increment}>
+              <h3 className='quantity__num'>{qty}</h3>
+              <button type='button' class='plus' onClick={incQty}>
                 +
               </button>
             </div>
           </div>
           <div className='product-page__buttons'>
-            <button type='button' className='add-to-cart' onClick=''>
+            <button
+              type='button'
+              className='add-to-cart'
+              onClick={() => onAdd(product, qty)}
+            >
               Add To Cart
             </button>
             <button type='button' className='buy-now' onClick=''>

@@ -3,7 +3,11 @@ import Link from 'next/link';
 import { AiOutlineShopping } from 'react-icons/ai';
 import { FaMoon } from 'react-icons/fa';
 
+import Cart from './Cart';
+import { useStateContext } from '../context/StateContext';
+
 const Nav = () => {
+  const { showCart, setShowCart, totalQuantities } = useStateContext();
   return (
     <nav className='nav'>
       <Link href='/'>
@@ -55,11 +59,12 @@ const Nav = () => {
           <button
             type='button'
             className='nav__links nav__cart-icon'
-            onClick=''
+            onClick={() => setShowCart(true)}
           >
             <AiOutlineShopping />
-            <span className='nav__cart--item-amount'>1</span>
+            <span className='nav__cart--item-amount'>{totalQuantities}</span>
           </button>
+          {showCart && <Cart />}
         </div>
       </div>
     </nav>
