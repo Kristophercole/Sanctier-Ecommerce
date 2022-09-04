@@ -8,8 +8,12 @@ const ProductPage = ({ product, products }) => {
   const { name, images, details, price, size, colour } = product;
 
   const [index, setIndex] = useState(0);
-  const { incQty, decQty, qty, onAdd } = useStateContext();
+  const { incQty, decQty, qty, onAdd, setShowCart } = useStateContext();
 
+  const handleBuyNow = () => {
+    onAdd(product, qty);
+    setShowCart(true);
+  };
   return (
     <div>
       <div className='product-page__container'>
@@ -23,6 +27,7 @@ const ProductPage = ({ product, products }) => {
           <div className='small-images__container'>
             {images?.map((item, i) => (
               <img
+                key={i}
                 src={urlFor(item)}
                 className={
                   i === index ? 'small-image selected-image' : 'small-image'
@@ -39,12 +44,12 @@ const ProductPage = ({ product, products }) => {
           <p className='product-page__price'>${price}</p>
           <div className='product-page__quantity'>
             <h3>Quantity</h3>
-            <div class='quantity__input'>
-              <button type='button' class='minus' onClick={decQty}>
+            <div className='quantity__input'>
+              <button type='button' className='minus' onClick={decQty}>
                 -
               </button>
               <h3 className='quantity__num'>{qty}</h3>
-              <button type='button' class='plus' onClick={incQty}>
+              <button type='button' className='plus' onClick={incQty}>
                 +
               </button>
             </div>
@@ -57,7 +62,7 @@ const ProductPage = ({ product, products }) => {
             >
               Add To Cart
             </button>
-            <button type='button' className='buy-now' onClick=''>
+            <button type='button' className='buy-now' onClick={handleBuyNow}>
               Buy Now
             </button>
           </div>
