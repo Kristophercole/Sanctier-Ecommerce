@@ -2,10 +2,13 @@ import React from 'react';
 import Head from 'next/head';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import { useStateContext } from '../context/StateContext';
 
 const Layout = ({ children }) => {
+  const { theme } = useStateContext();
+
   return (
-    <div>
+    <div id={theme}>
       <Head>
         <title>Sanctier</title>
         <meta
@@ -19,10 +22,10 @@ const Layout = ({ children }) => {
       </header>
       <div className='layout'>
         <main className='main__container'> {children}</main>
-        <footer>
-          <Footer />
-        </footer>
       </div>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 };

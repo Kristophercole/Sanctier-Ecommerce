@@ -5,8 +5,15 @@ import product from './product';
 import heroBanner from './heroBanner';
 import hero from './hero';
 import footerBanner from './footerBanner';
+import clothingLines from './clothingLines';
 
 export default createSchema({
   name: 'default',
-  types: schemaTypes.concat([hero, heroBanner, product, footerBanner]),
+  types: schemaTypes.concat([
+    hero,
+    heroBanner,
+    clothingLines,
+    product,
+    footerBanner,
+  ]),
 });

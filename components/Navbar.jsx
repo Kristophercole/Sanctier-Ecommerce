@@ -9,7 +9,7 @@ import { useStateContext } from '../context/StateContext';
 import Hamburger from './Hamburger';
 
 const Nav = () => {
-  const { showCart, setShowCart, showMenu, totalQuantities } =
+  const { showCart, setShowCart, showMenu, totalQuantities, toggleTheme } =
     useStateContext();
   return (
     <nav className='nav'>
@@ -23,7 +23,7 @@ const Nav = () => {
           <button
             type='button'
             className='nav__links nav__dark-mode'
-            onClick={() => {}}
+            onClick={toggleTheme}
           >
             <FaMoon />
           </button>

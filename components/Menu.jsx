@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
-import { AiOutlineRight } from 'react-icons/ai';
+import { AiFillInstagram, AiFillFacebook } from 'react-icons/ai';
+import { FaTiktok, FaTwitter } from 'react-icons/fa';
 import { useStateContext } from '../context/StateContext';
-import Hamburger from './Hamburger';
 
 const HamburgerMenu = () => {
   const menuRef = useRef();
@@ -10,68 +10,54 @@ const HamburgerMenu = () => {
     <div>
       <div className='menu__wrapper' ref={menuRef}>
         <div className='menu__container'>
-          {/* <button
-            type='button'
-            className='menu__exit-button'
-            onClick={() => {
-              setShowMenu(false);
-              setMenuIsOpen((current) => !current);
-            }}
-          >
-            <span className='menu__heading'>Your menu</span>
-            <span className='menu__total-quantities'>({} items)</span>
-            <AiOutlineRight />
-          </button> */}
-          <div class='hamburger-menu'>
-            <ul class='menu__box'>
-              <li>
-                <a class='menu__item' href='#'>
-                  Clothing line 1
+          <div className='hamburger-menu'>
+            <div className='menu__clothing-lines'>
+              <h3>Clothing Lines</h3>
+              <ul>
+                <li>clothing line 1</li>
+                <li>clothing line 2</li>
+                <li>clothing line 3</li>
+              </ul>
+            </div>
+            <div className='menu__socials'>
+              <h3>Follow us on</h3>
+              <p className='menu__icons'>
+                <a
+                  className='menu__links'
+                  href='https://google.com'
+                  target='_blank'
+                >
+                  <AiFillInstagram />
                 </a>
-              </li>
-              <li>
-                <a class='menu__item' href='#'>
-                  Clothing line 2
+                <a
+                  className='menu__links'
+                  href='https://google.com'
+                  target='_blank'
+                >
+                  <AiFillFacebook />
                 </a>
-              </li>
-              <li>
-                <a class='menu__item' href='#'>
-                  About
+                <a
+                  className='menu__links'
+                  href='https://google.com'
+                  target='_blank'
+                >
+                  <FaTiktok className='fa' />
                 </a>
-              </li>
-              <li>
-                <a class='menu__item' href='#'>
-                  Contact
+                <a
+                  className='menu__links'
+                  href='https://google.com'
+                  target='_blank'
+                >
+                  <FaTwitter className='fa' />
                 </a>
-              </li>
-              <li>
-                <a class='menu__item' href='#'>
-                  Instagram
+              </p>
+              <div className='menu__info'>
+                <a href='/' target='_blank'>
+                  Terms And Conditions
                 </a>
-              </li>
-            </ul>
-          </div>
-          {/* {menuItems.length < 1 && (
-              <div className='menu--empty'>
-                <AiOutlineShopping size={150} />
-                <h3>Your shopping bag is empty</h3>
-                <Link href='/'>
-                  <button
-                    type='button'
-                    className='btn'
-                    onClick={() => setShowmenu(false)}
-                  >
-                    Continue Shopping
-                  </button>
-                </Link>
               </div>
-            )} */}
-          {/* {menuItems.length >= 1 &&
-                menuItems.map((item) => (
-                  <div className='menu__product' key={item._id}>
-                    <h3 className='menu-product__image'></h3>
-                  </div>
-                ))} */}
+            </div>
+          </div>
         </div>
       </div>
     </div>

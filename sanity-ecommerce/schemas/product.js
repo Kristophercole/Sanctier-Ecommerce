@@ -18,6 +18,11 @@ export default {
       type: 'string',
     },
     {
+      name: 'clothingline',
+      title: 'Clothing Line',
+      type: 'string',
+    },
+    {
       name: 'colour',
       title: 'Colour',
       type: 'string',
