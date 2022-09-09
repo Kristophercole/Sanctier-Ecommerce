@@ -11,16 +11,75 @@ const HamburgerMenu = () => {
       <div className='menu__wrapper' ref={menuRef}>
         <div className='menu__container'>
           <div className='hamburger-menu'>
+            <h3 className='menu__headings'>Clothing Lines</h3>
             <div className='menu__clothing-lines'>
-              <h3>Clothing Lines</h3>
               <ul>
-                <li>clothing line 1</li>
-                <li>clothing line 2</li>
-                <li>clothing line 3</li>
+                <a href=''>
+                  <li>Sanctier Original</li>
+                </a>
+                <a href=''>
+                  <li>Sanctier Winter Black</li>
+                </a>
+                <a href=''>
+                  <li>Sanctier Winter Grey</li>
+                </a>
+                <a href=''>
+                  <li>Sanctier Limited Edition</li>
+                </a>
+                <a href=''>
+                  <li>clothing line 3</li>
+                </a>
+                <a href=''>
+                  <li>clothing line 3</li>
+                </a>
+                <a href=''>
+                  <li>clothing line 3</li>
+                </a>
+                <a href=''>
+                  <li>clothing line 3</li>
+                </a>
+                <a href=''>
+                  <li>clothing line 3</li>
+                </a>
+                <a href=''>
+                  <li>clothing line 3</li>
+                </a>
+                <a href=''>
+                  <li>clothing line 3</li>
+                </a>
+                <a href=''>
+                  <li>clothing line 3</li>
+                </a>
+                <a href=''>
+                  <li>clothing line 3</li>
+                </a>
+                <a href=''>
+                  <li>clothing line 3</li>
+                </a>
+                <a href=''>
+                  <li>clothing line 3</li>
+                </a>
+                <a href=''>
+                  <li>clothing line 3</li>
+                </a>
+                <a href=''>
+                  <li>clothing line 3</li>
+                </a>
+                <a href=''>
+                  <li>clothing line 3</li>
+                </a>
               </ul>
             </div>
             <div className='menu__socials'>
-              <h3>Follow us on</h3>
+              <div className='menu__info'>
+                <a href='/about'>
+                  <h3 className='menu__headings'>About</h3>
+                </a>
+                <a href='/about'>
+                  <h3 className='menu__headings'>Contact</h3>
+                </a>
+              </div>
+              <h2 className='socials__heading'>Follow us on</h2>
               <p className='menu__icons'>
                 <a
                   className='menu__links'

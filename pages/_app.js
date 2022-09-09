@@ -2,6 +2,7 @@ import React from 'react';
 import { Toaster } from 'react-hot-toast';
 
 import '../styles/globals.css';
+// import '../styles/dark.css';
 import Layout from '../components/Layout';
 import { StateContext } from '../context/StateContext';
 
