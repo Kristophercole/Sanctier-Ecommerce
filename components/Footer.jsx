@@ -8,7 +8,11 @@ const Footer = () => {
     <div className='footer__container'>
       <h3>Follow us on</h3>
       <p className='footer__icons'>
-        <a className='footer__links' href='https://google.com' target='_blank'>
+        <a
+          className='footer__links'
+          href='https://www.instagram.com/sanctier.clothing/'
+          target='_blank'
+        >
           <AiFillInstagram />
         </a>
         <a className='footer__links' href='https://google.com' target='_blank'>

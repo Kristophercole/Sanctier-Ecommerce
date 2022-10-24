@@ -4,7 +4,7 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import { useStateContext } from '../context/StateContext';
 
-const Layout = ({ children }) => {
+const Layout = ({ children, clothingLinesData }) => {
   const { theme } = useStateContext();
 
   return (
@@ -18,10 +18,10 @@ const Layout = ({ children }) => {
         <meta name='' content='' />
       </Head>
       <header>
-        <Navbar />
+        <Navbar clothingLinesData={clothingLinesData} />
       </header>
       <div className='layout'>
-        <main className='main__container'> {children}</main>
+        <main className='main__container'>{children}</main>
       </div>
       <footer>
         <Footer />

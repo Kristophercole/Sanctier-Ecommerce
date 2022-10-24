@@ -21,7 +21,10 @@ const Hero = ({ hero }) => {
       <IoIosArrowDropleft className='left-arrow' onClick={prevSlide} />
       {hero.images.map((slide, index) => {
         return (
-          <div className={index === current ? 'slide active' : 'slide'}>
+          <div
+            key={index}
+            className={index === current ? 'slide active' : 'slide'}
+          >
             {index === current && (
               <img
                 src={urlFor(slide)}

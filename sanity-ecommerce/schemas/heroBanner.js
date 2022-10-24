@@ -17,8 +17,8 @@ export default {
       type: 'string',
     },
     {
-      name: 'product',
-      title: 'Product',
+      name: 'buttonSlugLink',
+      title: 'Button Slug Link',
       type: 'string',
     },
     {
@@ -39,16 +39,6 @@ export default {
     {
       name: 'largeText1',
       title: 'LargeText1',
-      type: 'string',
-    },
-    {
-      name: 'discount',
-      title: 'Discount',
-      type: 'string',
-    },
-    {
-      name: 'saleTime',
-      title: 'SaleTime',
       type: 'string',
     },
   ],

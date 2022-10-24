@@ -62,7 +62,7 @@ const Cart = () => {
         </button>
 
         {cartItems.length < 1 && (
-          <div className='cart--empty'>
+          <div className='cart__empty'>
             <AiOutlineShopping size={150} />
             <h3>Your shopping bag is empty</h3>
             <Link href='/'>
@@ -91,10 +91,10 @@ const Cart = () => {
                   <h4>${item.price}ea.</h4>
                   <div className='flex bottom'>
                     <div>
-                      <div class='quantity__input'>
+                      <div className='quantity__input'>
                         <button
                           type='button'
-                          class='minus'
+                          className='minus'
                           onClick={() =>
                             toggleCartItemQuantity(item._id, 'dec')
                           }
@@ -104,7 +104,7 @@ const Cart = () => {
                         <h3 className='quantity__num'>{item.quantity}</h3>
                         <button
                           type='button'
-                          class='plus'
+                          className='plus'
                           onClick={() =>
                             toggleCartItemQuantity(item._id, 'inc')
                           }

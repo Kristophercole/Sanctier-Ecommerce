@@ -10,7 +10,9 @@ export default async function handler(req, res) {
         submit_type: 'pay',
         mode: 'payment',
         payment_method_types: ['card'],
-        billing_address_collection: 'auto',
+        shipping_address_collection: {
+          allowed_countries: ['US', 'CA', 'AU'],
+        },
         shipping_options: [{ shipping_rate: 'shr_1LeD03GXUZXKek3EP9HLaxyO' }],
         line_items: req.body.map((item) => {
           const img = item.images[0].asset._ref;
@@ -41,7 +43,7 @@ export default async function handler(req, res) {
           };
         }),
         success_url: `${req.headers.origin}/success`,
-        cancel_url: `${req.headers.origin}/canceled`,
+        cancel_url: `${req.headers.origin}/`,
       };
       const session = await stripe.checkout.sessions.create(prams);
       res.status(200).json(session);

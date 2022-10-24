@@ -4,11 +4,11 @@ import { AiOutlineShopping } from 'react-icons/ai';
 import { FaMoon } from 'react-icons/fa';
 
 import Cart from './Cart';
-import HamburgerMenu from './Menu';
+import Menu from './Menu';
 import { useStateContext } from '../context/StateContext';
 import Hamburger from './Hamburger';
 
-const Nav = () => {
+const Nav = ({ clothingLinesData }) => {
   const { showCart, setShowCart, showMenu, totalQuantities, toggleTheme } =
     useStateContext();
   return (
@@ -18,11 +18,11 @@ const Nav = () => {
       </Link>
       <div className='navbar__container'>
         <Hamburger />
-        {showMenu && <HamburgerMenu />}
+        {showMenu && <Menu clothingLinesData={clothingLinesData} />}
         <div className='nav__links--list'>
           <button
             type='button'
-            className='nav__links nav__dark-mode'
+            className='nav__links nav__dark-mode dark-mode'
             onClick={toggleTheme}
           >
             <FaMoon />

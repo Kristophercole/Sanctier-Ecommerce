@@ -27,8 +27,11 @@ const Success = () => {
         </p>
         <p className='success__email-msg'>
           If you have any questions, please email{' '}
-          <a className='success__email' href='mailto:test@example.com'>
-            test@example.com
+          <a
+            className='success__email'
+            href='mailto:sanctier.clothing@gmail.com'
+          >
+            sanctier.clothing@gmail.com
           </a>
           <br />
           or go to the contact section in our{' '}

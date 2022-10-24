@@ -6,6 +6,7 @@ import heroBanner from './heroBanner';
 import hero from './hero';
 import footerBanner from './footerBanner';
 import clothingLines from './clothingLines';
+import about from './about';
 
 export default createSchema({
   name: 'default',
@@ -15,5 +16,6 @@ export default createSchema({
     clothingLines,
     product,
     footerBanner,
+    about,
   ]),
 });

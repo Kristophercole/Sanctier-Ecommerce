@@ -9,11 +9,11 @@ import FooterBanner from '../components/FooterBanner';
 import ClothingLines from '../components/ClothingLines';
 
 const Home = ({
+  clothingLinesData,
   products,
   HeroBannerData,
   heroData,
   footerBannerData,
-  clothingLinesData,
 }) => {
   return (
     <>
@@ -55,13 +55,17 @@ export const getServerSideProps = async () => {
   const clothingLinesQuery = '*[_type == "clothinglines"]';
   const clothingLinesData = await client.fetch(clothingLinesQuery);
 
+  const aboutQuery = '*[_type == "about"]';
+  const aboutData = await client.fetch(aboutQuery);
+
   return {
     props: {
+      clothingLinesData,
       products,
       HeroBannerData,
       footerBannerData,
       heroData,
-      clothingLinesData,
+      aboutData,
     },
   };
 };
