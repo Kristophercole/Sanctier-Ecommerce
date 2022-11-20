@@ -5,7 +5,7 @@ import { client, urlFor } from '../../lib/client';
 import { useStateContext } from '../../context/StateContext';
 
 const ProductPage = ({ product, products }) => {
-  const { name, images, details, price, size, colour } = product;
+  const { name, images, details, price, size } = product;
 
   const [index, setIndex] = useState(0);
   const { incQty, decQty, qty, onAdd, setShowCart } = useStateContext();
@@ -42,6 +42,14 @@ const ProductPage = ({ product, products }) => {
           <h4>Details: </h4>
           <p>{details}</p>
           <p className='product-page__price'>${price}</p>
+          <div className='product-page__sizes'>
+            {size?.map((item, i) => (
+              <div className='sizes'>
+                <label htmlFor='size'>{item}</label>
+                <input type='radio' name='size' />
+              </div>
+            ))}
+          </div>
           <div className='product-page__quantity'>
             <h3>Quantity</h3>
             <div className='quantity__input'>

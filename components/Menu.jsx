@@ -20,11 +20,16 @@ const HamburgerMenu = ({ clothingLinesData }) => {
           </button>
           <div className='hamburger-menu'>
             <h3 className='menu__headings'>Clothing Lines</h3>
-            {/* {console.log(clothingLinesData[0].clothinglines)} */}
             <div className='menu__clothing-lines'>
               <ul>
                 {clothingLinesData[0].clothinglines.map((item, index) => {
-                  return <li key={index}>{item}</li>;
+                  return (
+                    <li key={index}>
+                      <a className='menu__clothing-links' href={`/#${item}`}>
+                        {item}
+                      </a>
+                    </li>
+                  );
                 })}
               </ul>
             </div>

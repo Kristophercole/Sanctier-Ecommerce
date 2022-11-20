@@ -23,11 +23,6 @@ export default {
       type: 'string',
     },
     {
-      name: 'colour',
-      title: 'Colour',
-      type: 'string',
-    },
-    {
       name: 'size',
       title: 'Size',
       type: 'array',

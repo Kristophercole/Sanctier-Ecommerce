@@ -86,7 +86,7 @@ const About = ({ aboutData }) => {
             <div>
               <h3>Requirements for a refund</h3>
               <ol>
-                <li>Within 15 days of purchase</li>
+                <li>Within 14 days of purchase</li>
                 <li>Proof of purchase</li>
               </ol>
             </div>

@@ -4,6 +4,7 @@ import Product from './Product';
 const ClothingLine = ({ line, products }) => {
   return (
     <>
+      <div id={line}></div>
       <h2 className='clothing-line__heading'>{line}</h2>
       <div className='products__container'>
         {products.slice(0, 10).map((item) => {

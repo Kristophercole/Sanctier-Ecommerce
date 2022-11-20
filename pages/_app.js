@@ -7,18 +7,6 @@ import { StateContext } from '../context/StateContext';
 
 import Layout from '../components/Layout';
 
-// function MyApp({ Component, pageProps, nav }) {
-//   return (
-//     <StateContext>
-//       <Layout>
-//         {console.log(nav)}
-//         <Toaster />
-//         <Component {...pageProps} />
-//       </Layout>
-//     </StateContext>
-//   );
-// }
-
 function Page({ Component, pageProps, nav }) {
   return (
     <StateContext>
